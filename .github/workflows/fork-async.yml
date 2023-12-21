@@ -1,7 +1,6 @@
 name: Sync Fork
 
 on:
-  push:
   schedule:
     - cron: '0 5 * * *'
 
