@@ -1,0 +1,16 @@
+name: Sync Fork
+
+on:
+  push:
+  schedule:
+    - cron: '0 5 * * *'
+
+jobs:
+  repo-sync:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: tgymnich/fork-sync@v1.2.1
+      with:
+        # GitHub API token with forking permissions
+        github_token: ${{ secrets.FORK_ASYNC }}
+        owner: nvm-sh
